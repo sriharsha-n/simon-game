@@ -6,8 +6,12 @@ var level=0;
 var count=0;
 var score=0;
 
+if(scree.width<1000){
+	setTimeout(nextSequence,2500);
+}
+
 $(".btn").click(function(event){
-	if(firstPress==1||screen.width<1000){
+	// if(firstPress==1||screen.width<1000){
 		// var userChosenColour=event.target.id;
 		if(count==0){
 			userClickedPattern=[];
@@ -21,7 +25,7 @@ $(".btn").click(function(event){
 		var index=buttonColors.indexOf(userChosenColour);
 		console.log(count,level);
 		checkAnswer(index);
-	}
+	// }
 });
 
 function animatePress(currentColor){
