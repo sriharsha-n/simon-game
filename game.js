@@ -7,7 +7,7 @@ var count=0;
 var score=0;
 
 $(".btn").click(function(event){
-	if(firstPress==1){
+	if(firstPress==1||screen.width<1000){
 		// var userChosenColour=event.target.id;
 		if(count==0){
 			userClickedPattern=[];
