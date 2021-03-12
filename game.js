@@ -6,7 +6,7 @@ var level=0;
 var count=0;
 var score=0;
 
-if(scree.width<1000){
+if(screen.width<1000){
 	setTimeout(nextSequence,2500);
 }
 
