@@ -3,37 +3,57 @@
 
 <head>
   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon</title>
-  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <h1 id="level-title">Press A Key to Start</h1>
-  <h3>Score : <span>0</span></h3>
-  <div class="container">
-    <div lass="row">
+  <div class="row">
+    <div class="col-md-2">
+      
+    </div>
+    <div class="col-md-8">
+      <div class="row">
 
-      <div type="button" id="green" class="btn green">
+        <div type="button" id="green" class="btnbtn green">
 
-      </div>
+        </div>
 
-      <div type="button" id="red" class="btn red">
+        <div type="button" id="red" class="btnbtn red">
+
+        </div>
+
+        <div type="button" id="wood" class="btnbtn wood">
+
+        </div>
+
+    <script type="text/javascript">
+      if(screen.width>600){
+        document.write("</div><div class='row'>");
+      }
+    </script>
+
+
+        <div type="button" id="yellow" class="btnbtn yellow">
+
+        </div>
+        <div type="button" id="blue" class="btnbtn blue">
+
+        </div>
+
+        <div type="button" id="pink" class="btnbtn pink">
+
+        </div>
 
       </div>
     </div>
-
-    <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-
-    </div>
-
+    <div class="col-md-2 order-sm-last order-first">
+        <h3>Score : <span>0</span></h3>
+    </div>  
   </div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
   <script src="game.js">  </script>

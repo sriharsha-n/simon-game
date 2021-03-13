@@ -1,4 +1,4 @@
-var buttonColors=["red", "blue", "green", "yellow"];
+var buttonColors=["red", "blue", "green", "yellow","wood","pink"];
 var gamePattern=[];
 var userClickedPattern=[];
 
@@ -6,8 +6,8 @@ var level=0;
 var count=0;
 var score=0;
 
-$(".btn").click(function(event){
-	if(firstPress==1){
+$(".btnbtn").click(function(event){
+	// if(firstPress==1){
 		// var userChosenColour=event.target.id;
 		if(count==0){
 			userClickedPattern=[];
@@ -21,7 +21,7 @@ $(".btn").click(function(event){
 		var index=buttonColors.indexOf(userChosenColour);
 		console.log(count,level);
 		checkAnswer(index);
-	}
+	// }
 });
 
 function animatePress(currentColor){
@@ -34,7 +34,7 @@ function animatePress(currentColor){
 function nextSequence(){
 	changeLevel();
 	var randomNumber=Math.random();
-	randomNumber=Math.floor(randomNumber*4)
+	randomNumber=Math.floor(randomNumber*6)
 	var randomChosenColor=buttonColors[randomNumber];
 	gamePattern.push(randomChosenColor)
 	console.log(gamePattern);
@@ -61,10 +61,10 @@ function checkAnswer(index){
 		count++;
 		console.log(count+" "+level)
 		score++;
-		$("h3 span").slideUp();
+		$("span").slideUp();
 		setTimeout(function(){
-			$("h3 span").text(score);
-			$("h3 span").slideDown();	
+			$("span").text(score);
+			$("span").slideDown();	
 		},300);
 		if(count==level){
 			setTimeout(nextSequence,500);
@@ -86,7 +86,7 @@ function wrongAnswer(){
 	level=0;
 	firstPress=0;
 	score=0;
-	$("h3 span").slideUp().slideDown().text("0");
+	$("span").slideUp().slideDown().text("0");
 }
 
 var firstPress=0;
@@ -95,4 +95,8 @@ $(document).keypress(function(){
 		nextSequence();
 		firstPress=1;
 	}
+});
+
+$(document).ready(function(){
+	setTimeout(nextSequence,1000);
 });
